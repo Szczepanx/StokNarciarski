@@ -1,16 +1,47 @@
 public class Instruktor {
-
+    private String ImieInstruktora;
+    private String NazwiskoInstruktora;
     private String PoziomZaawansowania;
     private String TypInstruktora;
     private double CenaInstruktora;
 
-    public Instruktor(String poziomZaawansowania, String typInstruktora, double cena) {
+
+    public Instruktor(String imieInstruktora, String nazwiskoInstruktora, String poziomZaawansowania, String typInstruktora, double cenaInstruktora) {
+        ImieInstruktora = imieInstruktora;
+        NazwiskoInstruktora = nazwiskoInstruktora;
         PoziomZaawansowania = poziomZaawansowania;
         TypInstruktora = typInstruktora;
-        CenaInstruktora = cena;
+        CenaInstruktora = cenaInstruktora;
     }
 
     public Instruktor() {
+    }
+
+    public String getImieInstruktora() {
+        return ImieInstruktora;
+    }
+
+    public Instruktor setImieInstruktora(String imieInstruktora) {
+        ImieInstruktora = imieInstruktora;
+        return this;
+    }
+
+    public String getNazwiskoInstruktora() {
+        return NazwiskoInstruktora;
+    }
+
+    public Instruktor setNazwiskoInstruktora(String nazwiskoInstruktora) {
+        NazwiskoInstruktora = nazwiskoInstruktora;
+        return this;
+    }
+
+    public double getCenaInstruktora() {
+        return CenaInstruktora;
+    }
+
+    public Instruktor setCenaInstruktora(double cenaInstruktora) {
+        CenaInstruktora = cenaInstruktora;
+        return this;
     }
 
     public String getPoziomZaawansowania() {
@@ -43,9 +74,11 @@ public class Instruktor {
     @Override
     public String toString() {
         return "Instruktor{" +
-                "PoziomZaawansowania='" + PoziomZaawansowania + '\'' +
+                "ImieInstruktora='" + ImieInstruktora + '\'' +
+                ", NazwiskoInstruktora='" + NazwiskoInstruktora + '\'' +
+                ", PoziomZaawansowania='" + PoziomZaawansowania + '\'' +
                 ", TypInstruktora='" + TypInstruktora + '\'' +
-                ", Cena=" + CenaInstruktora +
+                ", CenaInstruktora=" + CenaInstruktora +
                 '}';
     }
 }
