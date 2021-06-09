@@ -1,4 +1,5 @@
 public class Instruktor {
+    private int idInstruktora;
     private String ImieInstruktora;
     private String NazwiskoInstruktora;
     private String PoziomZaawansowania;
@@ -6,8 +7,9 @@ public class Instruktor {
     private double CenaInstruktora;
 
 
-    public Instruktor(String imieInstruktora, String nazwiskoInstruktora, String poziomZaawansowania, String typInstruktora, double cenaInstruktora) {
-        this.ImieInstruktora = imieInstruktora;
+    public Instruktor(int idInstruktora, String imieInstruktora, String nazwiskoInstruktora, String poziomZaawansowania, String typInstruktora, double cenaInstruktora) {
+        this.idInstruktora = idInstruktora;
+        ImieInstruktora = imieInstruktora;
         NazwiskoInstruktora = nazwiskoInstruktora;
         PoziomZaawansowania = poziomZaawansowania;
         TypInstruktora = typInstruktora;
@@ -15,6 +17,15 @@ public class Instruktor {
     }
 
     public Instruktor() {
+    }
+
+    public int getIdInstruktora() {
+        return idInstruktora;
+    }
+
+    public Instruktor setIdInstruktora(int idInstruktora) {
+        this.idInstruktora = idInstruktora;
+        return this;
     }
 
     public String getImieInstruktora() {
