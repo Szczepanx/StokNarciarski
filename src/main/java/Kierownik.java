@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Kierownik {
 
 
+
     public double UstalNowaCeneWypozyczeniaSprzetu(){
         Scanner scanner = new Scanner(System.in);
         return scanner.nextDouble();
@@ -54,11 +55,8 @@ public class Kierownik {
         int idPracownika = scanner.nextInt();
         String imiePracownika = scanner.nextLine();
         String nazwiskoPracownika= scanner.nextLine();
-
         List<Pracownik> listaPracownikow = new ArrayList<>();
-
         listaPracownikow.add(new Pracownik(idPracownika,imiePracownika,nazwiskoPracownika));
-
         return listaPracownikow;
 
 
@@ -71,12 +69,15 @@ public class Kierownik {
         return listaPracownikow;
 
     }
-    public void UstalCeneZaNaliczanyCzas(){
+    public double UstalCeneZaNaliczanyCzas(){
         Scanner scanner = new Scanner(System.in);
+        double cenaZaCzas = scanner.nextDouble();
+        return cenaZaCzas;
 
     }
-    public void UstalCeneZaNaliczonePunkty(){
+    public double UstalCeneZaNaliczonePunkty(){
         Scanner scanner = new Scanner(System.in);
-
+        double cenaZaPunkty = scanner.nextDouble();
+        return cenaZaPunkty;
     }
 }

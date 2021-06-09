@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Sprzet {
 
     private int IdSprzetu;
@@ -5,6 +7,7 @@ public class Sprzet {
     private double CenaSprzetu;
     private String TypSprzetu;
     private boolean DostepnoscSprzetu;
+    private List<Sprzet> listaSprzetow;
 
     public Sprzet(int id, String producent, double cenaSprzetu, String typSprzetu, boolean dostepnoscSprzetu) {
         this.IdSprzetu = id;
@@ -15,6 +18,24 @@ public class Sprzet {
     }
 
     public Sprzet() {
+    }
+
+    public int getIdSprzetu() {
+        return IdSprzetu;
+    }
+
+    public Sprzet setIdSprzetu(int idSprzetu) {
+        IdSprzetu = idSprzetu;
+        return this;
+    }
+
+    public List<Sprzet> getListaSprzetow() {
+        return listaSprzetow;
+    }
+
+    public Sprzet setListaSprzetow(List<Sprzet> listaSprzetow) {
+        this.listaSprzetow = listaSprzetow;
+        return this;
     }
 
     public int getId() {

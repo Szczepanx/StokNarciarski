@@ -7,7 +7,7 @@ public class Instruktor {
 
 
     public Instruktor(String imieInstruktora, String nazwiskoInstruktora, String poziomZaawansowania, String typInstruktora, double cenaInstruktora) {
-        ImieInstruktora = imieInstruktora;
+        this.ImieInstruktora = imieInstruktora;
         NazwiskoInstruktora = nazwiskoInstruktora;
         PoziomZaawansowania = poziomZaawansowania;
         TypInstruktora = typInstruktora;
