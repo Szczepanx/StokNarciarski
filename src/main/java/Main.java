@@ -11,6 +11,9 @@ public class Main {
         listaPracownikow.add(new Pracownik(3,"Tadeusz","Kaleta"));
         listaPracownikow.add(new Pracownik(4,"Stefan","Drab"));
 
+        List<Kierownik> listaKierowników = new ArrayList<>();
+        listaKierowników.add(new Kierownik(5,"Janusz","Bela"));
+
         List<Sprzet> listaSprzetow = new ArrayList<>();
         listaSprzetow.add(new Sprzet(1,"Salomon",29.99,"Kask",true));
         listaSprzetow.add(new Sprzet(1,"Salomon",50.00,"Narty",true));
