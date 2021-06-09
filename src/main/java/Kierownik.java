@@ -2,9 +2,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Kierownik {
+public class Kierownik extends Pracownik{
 
-
+    public Kierownik(int idPracownika, String imiePracownika, String nazwiskoPracownika) {
+        super(idPracownika, imiePracownika, nazwiskoPracownika);
+    }
 
     public double UstalNowaCeneWypozyczeniaSprzetu(){
         Scanner scanner = new Scanner(System.in);
