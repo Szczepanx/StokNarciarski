@@ -26,4 +26,17 @@ public class Zamownienie {
         return this;
     }
 
+    public podliczKosztyKarty() {
+
+    }
+    public podliczKosztyWynajmu() {
+
+    }
+    public podliczKosztyInstruktora() {
+
+    }
+    public podliczTotalKoszt() {
+
+    }
+
 }
