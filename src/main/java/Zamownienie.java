@@ -1,4 +1,3 @@
-import java.sql.Time;
 import java.util.Date;
 
 public class Zamownienie {
@@ -8,13 +7,11 @@ public class Zamownienie {
     public Zamownienie(){
 
     }
-
-    public int getData() {
+    public Date getData() {
         return Data;
     }
-
-    public Zamownienie setData(int Data) {
-        Data = Data;
+    public Zamownienie setData(Date Data) {
+        this.Data = Data;
         return this;
     }
     public int getIDKlienta() {
@@ -22,20 +19,20 @@ public class Zamownienie {
     }
 
     public Zamownienie setIDKlienta(int IDKlienta) {
-        IDKlienta = IDKlienta;
+        this.IDKlienta = IDKlienta;
         return this;
     }
 
-    public podliczKosztyKarty() {
+    public void podliczKosztyKarty() {
 
     }
-    public podliczKosztyWynajmu() {
+    public void podliczKosztyWynajmu() {
 
     }
-    public podliczKosztyInstruktora() {
+    public void podliczKosztyInstruktora() {
 
     }
-    public podliczTotalKoszt() {
+    public void podliczTotalKoszt() {
 
     }
 

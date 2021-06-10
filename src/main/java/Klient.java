@@ -7,12 +7,19 @@ public class Klient {
     public Klient() {
     }
 
+    public Klient(int IDKlienta, int IDKarty, String imieKlienta, String nazwiskoKlienta) {
+        this.IDKlienta = IDKlienta;
+        this.IDKarty = IDKarty;
+        ImieKlienta = imieKlienta;
+        NazwiskoKlienta = nazwiskoKlienta;
+    }
+
     public int getIDKlienta() {
         return IDKlienta;
     }
 
     public Klient setIDKlienta(int IDKlienta) {
-        IDKlienta = IDKlienta;
+        this.IDKlienta = IDKlienta;
         return this;
     }
 
@@ -21,7 +28,7 @@ public class Klient {
     }
 
     public Klient setIDKarty(int IDKarty) {
-        IDKarty = IDKarty;
+        this.IDKarty = IDKarty;
         return this;
     }
 
@@ -30,7 +37,7 @@ public class Klient {
     }
 
     public Klient setImieKlienta(String ImieKlienta) {
-        ImieKlienta = ImieKlienta;
+        this.ImieKlienta = ImieKlienta;
         return this;
     }
 
@@ -39,7 +46,7 @@ public class Klient {
     }
 
     public Klient setNazwiskoKlienta(String NazwiskoKlienta) {
-        NazwiskoKlienta = NazwiskoKlienta;
+        this.NazwiskoKlienta = NazwiskoKlienta;
         return this;
     }
 

@@ -4,12 +4,16 @@ public class KartaPkt extends Karta{
     public KartaPkt() {
     }
 
+    public KartaPkt(int iloscPkt) {
+        IloscPkt = iloscPkt;
+    }
+
     public int getIloscPkt() {
         return IloscPkt;
     }
 
     public Karta setIloscPkt(int IloscPkt) {
-        IloscPkt = IloscPkt;
+        this.IloscPkt = IloscPkt;
         return this;
     }
 

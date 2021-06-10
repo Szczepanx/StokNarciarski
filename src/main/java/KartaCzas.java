@@ -5,12 +5,17 @@ public class KartaCzas extends Karta {
     public KartaCzas() {
     }
 
+    public KartaCzas(int dataRoz, int czasRoz) {
+        DataRoz = dataRoz;
+        CzasRoz = czasRoz;
+    }
+
     public int getDataRoz() {
         return DataRoz;
     }
 
     public Karta setDataRoz(int DataRoz) {
-        DataRoz = DataRoz;
+        this.DataRoz = DataRoz;
         return this;
     }
 
@@ -19,7 +24,7 @@ public class KartaCzas extends Karta {
     }
 
     public Karta setCzasRoz(int CzasRoz) {
-        CzasRoz = CzasRoz;
+        this.CzasRoz = CzasRoz;
         return this;
     }
 

@@ -44,9 +44,13 @@ public class Main {
         listaPracownikow.add(new Pracownik(4, "Stefan", "Drab"));
 
 
+        List<Klient> listaKlientow = new LinkedList<>();
+        listaKlientow.add(new Klient(1,1,"Jan","Kowalski"));
+
+
         
 
-        List<Kierownik> listaKierowników = new ArrayList<>();
+        List<Kierownik> listaKierowników = new LinkedList<>();
         listaKierowników.add(new Kierownik(5,"Janusz","Bela"));
       
         List<Sprzet> listaSprzetow = new LinkedList<>();
