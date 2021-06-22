@@ -1,6 +1,23 @@
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 public class Main {
+
+    public static Sprzet findUsingEnhancedForLoop(
+            String producent, List<Sprzet> listaSprzetow) {
+
+        for (Sprzet sprzet : listaSprzetow) {
+            if (sprzet.getProducent().equals(producent)) {
+                System.out.println(sprzet);
+                return sprzet;
+            }
+        }
+        return null;
+    }
     public static String WyborUzytkownika(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("'U'=uzytkownik , 'K'= kierownik , 'P'=pracownik");
@@ -32,6 +49,13 @@ public class Main {
 
     public static void main(String[] args) {
 
+        LocalDateTime localDateTime = LocalDateTime.now();
+
+        System.out.println(localDateTime.plus(30, ChronoUnit.MINUTES));
+        System.out.println(localDateTime);
+
+        LocalDate localDate = LocalDate.now();
+
 
         Kierownik kierownik = new Kierownik();
         Pracownik pracownik = new Pracownik();
@@ -45,14 +69,15 @@ public class Main {
 
 
         List<Klient> listaKlientow = new LinkedList<>();
-        listaKlientow.add(new Klient(1,1,"Jan","Kowalski"));
+        listaKlientow.add(new Klient(1, 1, "Jan", "Kowalski"));
 
 
-        
+        List<Terminarz> listaTerminow = new LinkedList<>();
 
-        List<Kierownik> listaKierowników = new LinkedList<>();
-        listaKierowników.add(new Kierownik(5,"Janusz","Bela"));
-      
+
+        List<Kierownik> listaKierowników = new ArrayList<>();
+        listaKierowników.add(new Kierownik(5, "Janusz", "Bela"));
+
         List<Sprzet> listaSprzetow = new LinkedList<>();
         listaSprzetow.add(new Sprzet(1, "Salomon", 29.99, "Kask", true));
         listaSprzetow.add(new Sprzet(2, "Salomon", 50.00, "Narty", true));
@@ -64,46 +89,43 @@ public class Main {
         listaSprzetow.add(new Sprzet(8, "Rossignol", 24.99, "Buty Narciarskie", true));
         listaSprzetow.add(new Sprzet(9, "Rossignol", 14.99, "Kijki", true));
 
+        System.out.println(findUsingEnhancedForLoop("Rossignol" ,listaSprzetow));
+
 
         Scanner scanner = new Scanner(System.in);
-            WyborUzytkownika();
+
+        while (!scanner.hasNext("dupa")) {
+
             if (WyborUzytkownika().equals("K")) {
-                while(!scanner.hasNext("exit")){
                 KierownikMenu();
-                String wybirzOpcje = scanner.next();
-                switch (wybirzOpcje) {
-                    case "1":
+                while (!scanner.hasNext("exit")) {
+                    String wybirzOpcje = scanner.next();
+                    if (wybirzOpcje.equals("1")) {
                         kierownik.DodajNowySprzet(listaSprzetow);
                         System.out.println("Sprzet dodany!");
-                        break;
-                    case "2":
+                    } else if (wybirzOpcje.equals("2")) {
                         kierownik.UsunSprzet(listaSprzetow);
                         System.out.println("Sprzet usuniety!");
-                        break;
-                    case "3":
+                    } else if (wybirzOpcje.equals("3")) {
                         kierownik.DodajPracownika(listaPracownikow);
                         System.out.println("Pracownik dodany!");
-                        break;
-                    case "4":
+                    } else if (wybirzOpcje.equals("4")) {
                         kierownik.UsunPracownika(listaPracownikow);
                         System.out.println("Pracownik usuniety");
-                    case "5":
+                    } else if (wybirzOpcje.equals("5")) {
                         kierownik.DodajNowegoInstruktora(listaInstruktorow);
                         System.out.println("Instruktor dodany!");
-                        break;
-                    case "6":
+                    } else if (wybirzOpcje.equals("6")) {
                         kierownik.UsunInstruktora(listaInstruktorow);
                         System.out.println("Instruktor usuniety" +
                                 "!");
-                        break;
+                    }
                 }
-             }
 
 
-        }
-        else if (WyborUzytkownika().equals("P")){
-            PracownikMenu();
-            String wybierzOpcje = scanner.next();
+            } else if (WyborUzytkownika().equals("P")) {
+                PracownikMenu();
+                String wybierzOpcje = scanner.next();
                 switch (wybierzOpcje) {
                     case "1":
                         pracownik.DodajNowegoKlienta();
@@ -154,11 +176,9 @@ public class Main {
                         System.out.println("Dodano do zamowienia!");
                         break;
                 }
-            }
-        else if(WyborUzytkownika().equals("U")){
-
+            } else if (WyborUzytkownika().equals("U")) {
             }
 
+        }
     }
-
 }

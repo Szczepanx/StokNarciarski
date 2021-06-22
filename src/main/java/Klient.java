@@ -4,6 +4,7 @@ public class Klient {
     private String ImieKlienta;
     private String NazwiskoKlienta;
 
+
     public Klient() {
     }
 

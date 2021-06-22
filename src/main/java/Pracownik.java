@@ -7,19 +7,15 @@ public class Pracownik {
     public void DodajNowegoKlienta(){
 
     }
-
     public void PrzypiszKarteDoKlienta(){
 
     }
-
     public void PrzeprowadzPlatnosc(){
 
     }
-
     public void SprawdzDostepneSprzety(){
 
     }
-
     public void WypozyczSprzet(){
 
     }

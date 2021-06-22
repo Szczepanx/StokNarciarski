@@ -1,21 +1,21 @@
 import java.sql.Time;
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Terminarz {
     private int IdWpisu;
     private int IdInstruktora;
     private Date Data;
-    private Time CzasTrwaniaLekcji;
+    private int CzasTrwaniaLekcji;
 
-    public Terminarz(int idWpisu, int idInstruktora, Date data, Time czasTrwaniaLekcji) {
+    public Terminarz(int idWpisu, int idInstruktora, Date data, int czasTrwaniaLekcji) {
         IdWpisu = idWpisu;
         IdInstruktora = idInstruktora;
         Data = data;
         CzasTrwaniaLekcji = czasTrwaniaLekcji;
     }
 
-    public Terminarz() {
-    }
 
     public int getIdWpisu() {
         return IdWpisu;
@@ -44,11 +44,11 @@ public class Terminarz {
         return this;
     }
 
-    public Time getCzasTrwaniaLekcji() {
+    public int getCzasTrwaniaLekcji() {
         return CzasTrwaniaLekcji;
     }
 
-    public Terminarz setCzasTrwaniaLekcji(Time czasTrwaniaLekcji) {
+    public Terminarz setCzasTrwaniaLekcji(int czasTrwaniaLekcji) {
         CzasTrwaniaLekcji = czasTrwaniaLekcji;
         return this;
     }
