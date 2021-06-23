@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 
 public class Sprzet {
@@ -7,6 +8,8 @@ public class Sprzet {
     private double CenaSprzetu;
     private String TypSprzetu;
     private boolean DostepnoscSprzetu;
+    private List<Sprzet> listaSprzetow = new LinkedList<>();
+
 
     public Sprzet(int id, String producent, double cenaSprzetu, String typSprzetu, boolean dostepnoscSprzetu) {
         this.IdSprzetu = id;
@@ -35,6 +38,24 @@ public class Sprzet {
 
     public Sprzet setId(int id) {
         this.IdSprzetu = id;
+        return this;
+    }
+
+    public List<Sprzet> getListaSprzetow() {
+        listaSprzetow.add(new Sprzet(1, "Salomon", 29.99, "Kask", true));
+        listaSprzetow.add(new Sprzet(2, "Salomon", 50.00, "Narty", true));
+        listaSprzetow.add(new Sprzet(3, "Salomon", 29.99, "Buty Narciarskie", true));
+        listaSprzetow.add(new Sprzet(4, "Salomon", 35.00, "Buty Snowboardowe", true));
+        listaSprzetow.add(new Sprzet(5, "Salomon", 60.00, "Snowboard", true));
+        listaSprzetow.add(new Sprzet(6, "Rossignol", 29.99, "Kask", true));
+        listaSprzetow.add(new Sprzet(7, "Rossignol", 45.00, "Narty", true));
+        listaSprzetow.add(new Sprzet(8, "Rossignol", 24.99, "Buty Narciarskie", true));
+        listaSprzetow.add(new Sprzet(9, "Rossignol", 14.99, "Kijki", true));
+        return listaSprzetow;
+    }
+
+    public Sprzet setListaSprzetow(List<Sprzet> listaSprzetow) {
+        this.listaSprzetow = listaSprzetow;
         return this;
     }
 
@@ -84,4 +105,7 @@ public class Sprzet {
                 ", DostepnoscSprzetu=" + DostepnoscSprzetu +
                 '}';
     }
+
+
+
 }

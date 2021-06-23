@@ -2,6 +2,9 @@ import java.util.*;
 
 public class MainController {
 
+    private static Kierownik kierownik;
+    private static Sprzet sprzet;
+
     public static void clearScreen() {
         System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n");
     }
@@ -32,7 +35,6 @@ public class MainController {
     public static void MenuKierownik(int i){
         switch(i) {
             case 1:
-                // code block
                 break;
             case 2:
                 // code block

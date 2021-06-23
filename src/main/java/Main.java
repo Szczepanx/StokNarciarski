@@ -92,6 +92,7 @@ public class Main {
         System.out.println(findUsingEnhancedForLoop("Rossignol" ,listaSprzetow));
 
 
+
         Scanner scanner = new Scanner(System.in);
 
         while (!scanner.hasNext("dupa")) {
@@ -128,7 +129,7 @@ public class Main {
                 String wybierzOpcje = scanner.next();
                 switch (wybierzOpcje) {
                     case "1":
-                        pracownik.DodajNowegoKlienta();
+                        pracownik.DodajNowegoKlienta(listaKlientow);
                         System.out.println("Dodano Nowego Klienta!");
                         break;
                     case "2":
@@ -140,7 +141,7 @@ public class Main {
                         System.out.println("Przeprowadzono Platnosc:");
                         break;
                     case "4":
-                        pracownik.SprawdzDostepneSprzety();
+                        pracownik.SprawdzDostepneSprzety(listaSprzetow);
                         System.out.println("Oto Sprzety!");
                     case "5":
                         pracownik.WypozyczSprzet();
@@ -175,6 +176,7 @@ public class Main {
                         pracownik.DodajDoZamowienia();
                         System.out.println("Dodano do zamowienia!");
                         break;
+                    default:WyborUzytkownika();
                 }
             } else if (WyborUzytkownika().equals("U")) {
             }
