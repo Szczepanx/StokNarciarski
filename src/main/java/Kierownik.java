@@ -1,8 +1,27 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Kierownik extends Pracownik{
+
+    private List<Kierownik> listaKierownikow = new LinkedList<>();
+
+
+    public void dodajKierownika(Kierownik kierownik){
+        this.listaKierownikow.add(kierownik);
+    }
+
+    public void wyswietlKierownikow(){
+        for (Kierownik kierownik : listaKierownikow) {
+            System.out.println(kierownik.toString());
+        }
+
+    }
+
+    public void calaListaKierownikow(){
+
+    }
 
     public Kierownik(int idPracownika, String imiePracownika, String nazwiskoPracownika) {
         super(idPracownika, imiePracownika, nazwiskoPracownika);
@@ -104,5 +123,14 @@ public class Kierownik extends Pracownik{
         System.out.println("Wpisz cene :");
         double cenaZaPunkty = scanner.nextDouble();
         return cenaZaPunkty;
+    }
+
+    public List<Kierownik> getListaKierownikow() {
+        return listaKierownikow;
+    }
+
+    public Kierownik setListaKierownikow(List<Kierownik> listaKierownikow) {
+        this.listaKierownikow = listaKierownikow;
+        return this;
     }
 }

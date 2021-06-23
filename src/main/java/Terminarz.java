@@ -2,12 +2,31 @@ import java.sql.Time;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Terminarz {
     private int IdWpisu;
     private int IdInstruktora;
     private Date Data;
     private int CzasTrwaniaLekcji;
+    private List<Terminarz> listaTerminarzy = new LinkedList<>();
+
+
+    public void dodajTermin(Terminarz terminarz){
+        this.listaTerminarzy.add(terminarz);
+    }
+
+    public void wyswietlTerminy(){
+        for (Terminarz terminarz : listaTerminarzy) {
+            System.out.println(terminarz.toString());
+        }
+    }
+
+    public void calaListaTerminow(){
+
+    }
+
 
     public Terminarz(int idWpisu, int idInstruktora, Date data, int czasTrwaniaLekcji) {
         IdWpisu = idWpisu;
@@ -50,6 +69,15 @@ public class Terminarz {
 
     public Terminarz setCzasTrwaniaLekcji(int czasTrwaniaLekcji) {
         CzasTrwaniaLekcji = czasTrwaniaLekcji;
+        return this;
+    }
+
+    public List<Terminarz> getListaTerminarzy() {
+        return listaTerminarzy;
+    }
+
+    public Terminarz setListaTerminarzy(List<Terminarz> listaTerminarzy) {
+        this.listaTerminarzy = listaTerminarzy;
         return this;
     }
 

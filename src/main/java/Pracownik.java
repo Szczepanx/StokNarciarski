@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -6,6 +7,27 @@ public class Pracownik {
     private int IdPracownika;
     private String ImiePracownika;
     private String NazwiskoPracownika;
+    private List<Pracownik> listaPracownikow = new LinkedList<>();
+
+
+
+
+    public void calaListaPracownikow(){
+        listaPracownikow.add(new Pracownik(1, "Jan", "Kowalski"));
+        listaPracownikow.add(new Pracownik(2, "Andrzej", "Nowak"));
+        listaPracownikow.add(new Pracownik(3, "Tadeusz", "Kaleta"));
+        listaPracownikow.add(new Pracownik(4, "Stefan", "Drab"));}
+
+    public void dodajPracownika(Pracownik pracownik){
+        this.listaPracownikow.add(pracownik);
+    }
+
+    public void wyswietlPracownikow(){
+        for (Pracownik pracownik : listaPracownikow) {
+            System.out.println(pracownik.toString());
+        }
+
+    }
 
     public List<Klient> DodajNowegoKlienta(List <Klient> listaKlientow){
         Scanner scanner = new Scanner(System.in);
@@ -20,6 +42,7 @@ public class Pracownik {
         listaKlientow.add(new Klient(idKlienta,idKarty,imieKlienta,nazwiskoKlienta));
         return listaKlientow;
     }
+
     public void PrzypiszKarteDoKlienta(){
 
     }
@@ -87,6 +110,15 @@ public class Pracownik {
 
     public Pracownik setNazwiskoPracownika(String nazwiskoPracownika) {
         NazwiskoPracownika = nazwiskoPracownika;
+        return this;
+    }
+
+    public List<Pracownik> getListaPracownikow() {
+        return listaPracownikow;
+    }
+
+    public Pracownik setListaPracownikow(List<Pracownik> listaPracownikow) {
+        this.listaPracownikow = listaPracownikow;
         return this;
     }
 
