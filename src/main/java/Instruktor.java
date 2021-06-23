@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.List;
+
 public class Instruktor {
     private int idInstruktora;
     private String ImieInstruktora;
@@ -5,6 +8,25 @@ public class Instruktor {
     private String PoziomZaawansowania;
     private String TypInstruktora;
     private double CenaInstruktora;
+    private List<Instruktor> listaInstrukorow= new LinkedList<>();
+
+    public void dodajInstruktora(Instruktor instruktor){
+        this.listaInstrukorow.add(instruktor);
+    }
+
+    public void wyswietlInstuktorow(){
+        for (Instruktor instruktor : listaInstrukorow) {
+            System.out.println(instruktor.toString());
+        }
+
+    }
+
+    public void calaListaInstruktorow(){
+
+    }
+
+
+
 
 
     public Instruktor(int idInstruktora, String imieInstruktora, String nazwiskoInstruktora, String poziomZaawansowania, String typInstruktora, double cenaInstruktora) {
