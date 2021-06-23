@@ -4,6 +4,15 @@ public class MainController {
 
     private static Kierownik kierownik;
     private static Sprzet sprzet;
+    static Pracownik pracownik = new Pracownik();
+    static List<Kierownik> listaKierowników = new ArrayList<Kierownik>();      //Kierownik
+    static List<Pracownik> listaPracownikow = new ArrayList<Pracownik>();      //Pracownik
+    List<Instruktor> listaInstruktorow = new ArrayList<Instruktor>();          //Instruktor
+    static List<Klient> listaKlientow = new ArrayList<Klient>();               //Klient
+    static List<Sprzet> listaSprzetow = new ArrayList<Sprzet>();          //Sprzet
+    static List<Karta> listaKart = new ArrayList<Karta>();                 //Karta
+
+
 
     public static void clearScreen() {
         System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n");
@@ -11,12 +20,12 @@ public class MainController {
 
     public static String WyborUzytkownika(){
         Scanner scanner = new Scanner(System.in);
-        clearScreen();
+        //clearScreen();
         System.out.println("Wybierz użytkownika: ");
         //System.out.println("  'U' = uzytkownik");
         System.out.println("  'K' = kierownik");
         System.out.println("  'P' = pracownik");
-        String wybierzUzytkownika = scanner.nextLine();
+        String wybierzUzytkownika = scanner.next();
         return wybierzUzytkownika;
     }
 
@@ -46,7 +55,8 @@ public class MainController {
 
     public static int showMenuPracownik(){
         Scanner scanner = new Scanner(System.in);
-        clearScreen();
+
+        //clearScreen();
         System.out.println("DodajNowegoKlienta:1");
         System.out.println("PrzypiszKarteDoKlienta:2");
         System.out.println("PrzeprowadzPlatnosc:3");
@@ -60,13 +70,13 @@ public class MainController {
         return wyborMenu;
     }
 
-    public static void MenuPracownik(int i){
-        switch(i) {
+    public static void MenuPracownik(int wyborMenu){
+        switch(wyborMenu) {
             case 1:
-                // code block
+                pracownik.DodajNowegoKlienta(listaKlientow);
                 break;
             case 2:
-                // code block
+                pracownik.PrzypiszKarteDoKlienta(listaKart, listaKlientow);
                 break;
             case 3:
                 // code block
@@ -92,9 +102,13 @@ public class MainController {
     }
 
     public static void Start() {
+        System.out.println("Siemka dawaj");
         String Uzytkownik = WyborUzytkownika();
+
         if(Uzytkownik.equals("P")){
+            System.out.println("If po wybraniu Pracownika");
             MenuPracownik(showMenuPracownik());
+            System.out.println("PO metodzie wybor pracownika");
         }
         else if(Uzytkownik.equals("K")) {
             MenuKierownik(showMenuKierownik());
@@ -102,21 +116,12 @@ public class MainController {
     }
 
     public static void main(String[] args) {
-        List<Kierownik> listaKierowników = new ArrayList<Kierownik>();      //Kierownik
-        List<Pracownik> listaPracownikow = new ArrayList<Pracownik>();      //Pracownik
-        List<Instruktor> listaInstruktorow = new ArrayList<Instruktor>();   //Instruktor
-        List<Klient> listaKlientow = new ArrayList<Klient>();               //Klient
-        List<Sprzet> listaSprzetow = new ArrayList<Sprzet>();               //Sprzet
-
         listaPracownikow.add(new Pracownik(1, "Jan", "Kowalski"));
         listaPracownikow.add(new Pracownik(2, "Andrzej", "Nowak"));
         listaPracownikow.add(new Pracownik(3, "Tadeusz", "Kaleta"));
         listaPracownikow.add(new Pracownik(4, "Stefan", "Drab"));
-
         listaKlientow.add(new Klient(1,1,"Jan","Kowalski"));
-
         listaKierowników.add(new Kierownik(5,"Janusz","Bela"));
-
         listaSprzetow.add(new Sprzet(1, "Salomon", 29.99, "Kask", true));
         listaSprzetow.add(new Sprzet(2, "Salomon", 50.00, "Narty", true));
         listaSprzetow.add(new Sprzet(3, "Salomon", 29.99, "Buty Narciarskie", true));
@@ -126,7 +131,6 @@ public class MainController {
         listaSprzetow.add(new Sprzet(7, "Rossignol", 45.00, "Narty", true));
         listaSprzetow.add(new Sprzet(8, "Rossignol", 24.99, "Buty Narciarskie", true));
         listaSprzetow.add(new Sprzet(9, "Rossignol", 14.99, "Kijki", true));
-
         Start();
     }
 }

@@ -1,6 +1,6 @@
 public class KartaPkt extends Karta{
     private int IloscPkt;
-
+    private int CenaPunktu;
     public KartaPkt() {
     }
 
@@ -15,6 +15,14 @@ public class KartaPkt extends Karta{
     public Karta setIloscPkt(int IloscPkt) {
         this.IloscPkt = IloscPkt;
         return this;
+    }
+
+    public int getCenaPunktu() {
+        return CenaPunktu;
+    }
+
+    public void setCenaPunktu(int cenaPunktu) {
+        CenaPunktu = cenaPunktu;
     }
 
     @Override
