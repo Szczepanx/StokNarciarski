@@ -4,6 +4,8 @@ public class MainController {
 
     private static Kierownik kierownik;
     private static Sprzet sprzet;
+    private static Klient klient;
+    private static Zamownienie zamownienie;
 
     public static void clearScreen() {
         System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n");
@@ -127,6 +129,8 @@ public class MainController {
         listaSprzetow.add(new Sprzet(8, "Rossignol", 24.99, "Buty Narciarskie", true));
         listaSprzetow.add(new Sprzet(9, "Rossignol", 14.99, "Kijki", true));
 
-        Start();
+
+        zamownienie.podliczTotalKoszt(1);
+        //Start();
     }
 }
