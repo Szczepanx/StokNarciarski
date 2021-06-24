@@ -151,11 +151,7 @@ public class Main {
                         pracownik.PrzyjmijZwrotSprzetu();
                         System.out.println("Przyjmijeto Zwrot sprzetu!");
                         break;
-                    case "7":
-                        pracownik.ZarezerwujLekcjeUInstruktora();
-                        System.out.println("Zarezerwowano instruktora" +
-                                "!");
-                        break;
+
                     case "8":
                         pracownik.UsunWpisZTerminarza();
                         System.out.println("Usunieto wpis z terminarza:");
@@ -167,14 +163,6 @@ public class Main {
                     case "10":
                         pracownik.PodliczKoszty();
                         System.out.println("Tyle wyszlo!");
-                        break;
-                    case "11":
-                        pracownik.WybierzTypKarty();
-                        System.out.println("Wybrano typ karty!");
-                        break;
-                    case "12":
-                        pracownik.DodajDoZamowienia();
-                        System.out.println("Dodano do zamowienia!");
                         break;
                     default:WyborUzytkownika();
                 }
