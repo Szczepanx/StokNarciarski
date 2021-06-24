@@ -133,7 +133,7 @@ public class Main {
                         System.out.println("Dodano Nowego Klienta!");
                         break;
                     case "2":
-                        pracownik.PrzypiszKarteDoKlienta();
+                        //pracownik.PrzypiszKarteDoKlienta(listalistaKlientow);
                         System.out.println("Przypisano Karte Do Klienta!");
                         break;
                     case "3":
@@ -164,6 +164,16 @@ public class Main {
                         pracownik.PodliczKoszty();
                         System.out.println("Tyle wyszlo!");
                         break;
+
+                    case "11":
+                        //pracownik.WybierzTypKarty();
+                        System.out.println("Wybrano typ karty!");
+                        break;
+                    case "12":
+                        pracownik.DodajDoZamowienia();
+                        System.out.println("Dodano do zamowienia!");
+                        break;
+
                     default:WyborUzytkownika();
                 }
             } else if (WyborUzytkownika().equals("U")) {

@@ -1,6 +1,7 @@
 public class KartaCzas extends Karta {
     private int DataRoz;
     private int CzasRoz;
+    private int CenaZaMinute = 1;
 
     public KartaCzas() {
     }
@@ -8,6 +9,14 @@ public class KartaCzas extends Karta {
     public KartaCzas(int dataRoz, int czasRoz) {
         DataRoz = dataRoz;
         CzasRoz = czasRoz;
+    }
+
+    public int getCenaZaMinute() {
+        return CenaZaMinute;
+    }
+
+    public void setCenaZaMinute(int cenaZaMinute) {
+        CenaZaMinute = cenaZaMinute;
     }
 
     public int getDataRoz() {
