@@ -1,6 +1,6 @@
 public class KartaPkt extends Karta{
     private int IloscPkt;
-    private int CenaPunktu;
+   
     public KartaPkt() {
     }
 
@@ -17,12 +17,11 @@ public class KartaPkt extends Karta{
         return this;
     }
 
-    public int getCenaPunktu() {
-        return CenaPunktu;
-    }
+ list
+    public double cenaZaKarte(int iloscPunktow){
+        double cena = iloscPunktow*2.15;
+        return cena;
 
-    public void setCenaPunktu(int cenaPunktu) {
-        CenaPunktu = cenaPunktu;
     }
 
     @Override

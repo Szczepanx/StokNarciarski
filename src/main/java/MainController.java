@@ -14,6 +14,9 @@ public class MainController {
 
 
 
+
+    static Klient klient = new Klient();
+
     public static void clearScreen() {
         System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n");
     }
@@ -70,10 +73,12 @@ public class MainController {
         return wyborMenu;
     }
 
-    public static void MenuPracownik(int wyborMenu){
+list
+    public static void MenuPracownika(int wyborMenu){
         switch(wyborMenu) {
             case 1:
                 pracownik.DodajNowegoKlienta(listaKlientow);
+ main
                 break;
             case 2:
                 pracownik.PrzypiszKarteDoKlienta(listaKart, listaKlientow);
@@ -116,6 +121,14 @@ public class MainController {
     }
 
     public static void main(String[] args) {
+list
+
+        List<Kierownik> listaKierowników = new ArrayList<Kierownik>();      //Kierownik
+        List<Pracownik> listaPracownikow = new ArrayList<Pracownik>();      //Pracownik
+        List<Instruktor> listaInstruktorow = new ArrayList<Instruktor>();   //Instruktor
+        List<Klient> listaKlientow = new ArrayList<Klient>();               //Klient
+        List<Sprzet> listaSprzetow = new ArrayList<Sprzet>();               //Sprzet
+main
         listaPracownikow.add(new Pracownik(1, "Jan", "Kowalski"));
         listaPracownikow.add(new Pracownik(2, "Andrzej", "Nowak"));
         listaPracownikow.add(new Pracownik(3, "Tadeusz", "Kaleta"));
