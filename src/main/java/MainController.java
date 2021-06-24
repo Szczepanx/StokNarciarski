@@ -5,6 +5,9 @@ public class MainController {
     private static Kierownik kierownik;
     private static Sprzet sprzet;
 
+
+    static Klient klient = new Klient();
+
     public static void clearScreen() {
         System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n");
     }
@@ -60,10 +63,13 @@ public class MainController {
         return wyborMenu;
     }
 
+
+
     public static void MenuPracownik(int i){
         switch(i) {
             case 1:
-                // code block
+                klient.calaListaKlientow();
+                klient.dodajKlienta(new Klient(1,5,"fdf","fd"));
                 break;
             case 2:
                 // code block
@@ -102,6 +108,7 @@ public class MainController {
     }
 
     public static void main(String[] args) {
+
         List<Kierownik> listaKierowników = new ArrayList<Kierownik>();      //Kierownik
         List<Pracownik> listaPracownikow = new ArrayList<Pracownik>();      //Pracownik
         List<Instruktor> listaInstruktorow = new ArrayList<Instruktor>();   //Instruktor

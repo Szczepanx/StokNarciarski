@@ -17,6 +17,11 @@ public class KartaPkt extends Karta{
         return this;
     }
 
+    public double cenaZaKarte(int iloscPunktow){
+        double cena = iloscPunktow*2.15;
+        return cena;
+    }
+
     @Override
     public String toString() {
         return "KartaPkt{" +
