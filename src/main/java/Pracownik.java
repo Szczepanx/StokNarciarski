@@ -8,6 +8,9 @@ public class Pracownik {
     private String ImiePracownika;
     private String NazwiskoPracownika;
 
+
+    Sprzet sprzet = new Sprzet();
+
     public void DodajNowegoKlienta(List<Klient> listaKlientow){
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj ID Klienta:");
@@ -19,6 +22,7 @@ public class Pracownik {
         System.out.println("Podaj nazwisko klienta:");
             String nazwiskoKlienta = scan.next();
         scan.close();
+ main
 
         listaKlientow.add(new Klient(IntIDKlienta, IntIDKarty,imieKlienta,nazwiskoKlienta));
     }
@@ -54,7 +58,13 @@ public class Pracownik {
     }
 
     public void PrzeprowadzPlatnosc(){
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Czy klient zaplacil?('T' lub 'N'");
+        while(!scanner.hasNext("T")){
+            System.out.println("Pzepowadz Platnosc");
+            scanner.next();
+        }
+        System.out.println("Platnosc `zatwierdzona");
     }
 
     public void SprawdzDostepneSprzety(List<Sprzet> listaSprzetow){
@@ -62,12 +72,30 @@ public class Pracownik {
     }
 
     public void WypozyczSprzet(){
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Wpisz ID sprzetu : ");
+
+        int idSprzetu = scanner.nextInt();
+
+        for (Sprzet sprzet : sprzet.naszaLista()){
+            if (sprzet.getId()==idSprzetu){
+                sprzet.setDostepnoscSprzetu(false);
+            }
+        }
     }
     public void PrzyjmijZwrotSprzetu(){
+        Scanner scanner = new Scanner(System.in);
 
-    }
-    public void ZarezerwujLekcjeUInstruktora(){
+        System.out.println("Wpisz ID sprzetu do zwrocenia : ");
+
+        int idSprzetu = scanner.nextInt();
+
+        for (Sprzet sprzet : sprzet.naszaLista()){
+            if (sprzet.getId()==idSprzetu){
+                sprzet.setDostepnoscSprzetu(true);
+            }
+        }
 
     }
     public void UsunWpisZTerminarza(){
@@ -77,11 +105,15 @@ public class Pracownik {
 
     }
     public void PodliczKoszty(){
+ list
+//to jest w koszyku
+
 
     }
 
     public void DodajDoZamowienia(){
 
+ main
     }
 
     public Pracownik(int idPracownika, String imiePracownika, String nazwiskoPracownika) {

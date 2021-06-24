@@ -11,7 +11,7 @@ public class Sprzet {
     private List<Sprzet> listaSprzetow = new LinkedList<>();
 
 
-    public void naszaLista(){
+    public List <Sprzet> naszaLista(){
         listaSprzetow.add(new Sprzet(1, "Salomon", 29.99, "Kask", true));
         listaSprzetow.add(new Sprzet(2, "Salomon", 50.00, "Narty", true));
         listaSprzetow.add(new Sprzet(3, "Salomon", 29.99, "Buty Narciarskie", true));
@@ -21,6 +21,8 @@ public class Sprzet {
         listaSprzetow.add(new Sprzet(7, "Rossignol", 45.00, "Narty", true));
         listaSprzetow.add(new Sprzet(8, "Rossignol", 24.99, "Buty Narciarskie", true));
         listaSprzetow.add(new Sprzet(9, "Rossignol", 14.99, "Kijki", true));
+
+        return listaSprzetow;
 
     }
 
