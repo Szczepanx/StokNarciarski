@@ -9,6 +9,7 @@ public class Pracownik {
     private String NazwiskoPracownika;
     private List<Pracownik> listaPracownikow = new LinkedList<>();
 
+    Sprzet sprzet = new Sprzet();
 
 
 
@@ -47,18 +48,42 @@ public class Pracownik {
 
     }
     public void PrzeprowadzPlatnosc(){
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Czy klient zaplacil?('T' lub 'N'");
+        while(!scanner.hasNext("T")){
+            System.out.println("Pzepowadz Platnosc");
+            scanner.next();
+        }
+        System.out.println("Platnosc `zatwierdzona");
     }
     public void SprawdzDostepneSprzety(List<Sprzet> listaSprzetow){
         System.out.println(listaSprzetow.toString());
     }
     public void WypozyczSprzet(){
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Wpisz ID sprzetu : ");
+
+        int idSprzetu = scanner.nextInt();
+
+        for (Sprzet sprzet : sprzet.naszaLista()){
+            if (sprzet.getId()==idSprzetu){
+                sprzet.setDostepnoscSprzetu(false);
+            }
+        }
     }
     public void PrzyjmijZwrotSprzetu(){
+        Scanner scanner = new Scanner(System.in);
 
-    }
-    public void ZarezerwujLekcjeUInstruktora(){
+        System.out.println("Wpisz ID sprzetu do zwrocenia : ");
+
+        int idSprzetu = scanner.nextInt();
+
+        for (Sprzet sprzet : sprzet.naszaLista()){
+            if (sprzet.getId()==idSprzetu){
+                sprzet.setDostepnoscSprzetu(true);
+            }
+        }
 
     }
     public void UsunWpisZTerminarza(){
@@ -68,13 +93,7 @@ public class Pracownik {
 
     }
     public void PodliczKoszty(){
-
-    }
-    public void WybierzTypKarty(){
-
-    }
-    public void DodajDoZamowienia(){
-
+//to jest w koszyku
     }
 
     public Pracownik(int idPracownika, String imiePracownika, String nazwiskoPracownika) {
