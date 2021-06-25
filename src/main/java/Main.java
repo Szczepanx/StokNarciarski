@@ -127,6 +127,7 @@ boolean inputFlag = true;
                             System.out.println("Instruktor usuniety!");
                             break;
                     }
+
                     break;
                 case "P":
                     PracownikMenu();
@@ -222,7 +223,70 @@ boolean inputFlag = true;
                     }
                     break;
                 case "E":
+
                     System.exit(1);
+
+                    System.exit(0);
+
+                }
+
+
+            } else if (WyborUzytkownika().equals("P")) {
+                PracownikMenu();
+                String wybierzOpcje = scanner.next();
+                switch (wybierzOpcje) {
+                    case "1":
+                        pracownik.DodajNowegoKlienta(listaKlientow);
+                        System.out.println("Dodano Nowego Klienta!");
+                        break;
+                    case "2":
+                        //pracownik.PrzypiszKarteDoKlienta(listalistaKlientow);
+                        System.out.println("Przypisano Karte Do Klienta!");
+                        break;
+                    case "3":
+                        pracownik.PrzeprowadzPlatnosc();
+                        System.out.println("Przeprowadzono Platnosc:");
+                        break;
+                    case "4":
+                        pracownik.SprawdzDostepneSprzety(listaSprzetow);
+                        System.out.println("Oto Sprzety!");
+                    case "5":
+                        pracownik.WypozyczSprzet();
+                        System.out.println("Wypozyczono  Sprzet");
+                        break;
+                    case "6":
+                        pracownik.PrzyjmijZwrotSprzetu();
+                        System.out.println("Przyjmijeto Zwrot sprzetu!");
+                        break;
+
+                    case "8":
+                        pracownik.UsunWpisZTerminarza();
+                        System.out.println("Usunieto wpis z terminarza:");
+                        break;
+                    case "9":
+                        pracownik.ZobaczZarezerwowaneLekcje();
+                        System.out.println("Zarezerwowane lekcje!");
+                        break;
+                    case "10":
+                        pracownik.PodliczKoszty();
+                        System.out.println("Tyle wyszlo!");
+                        break;
+
+                    case "11":
+                        //pracownik.WybierzTypKarty();
+                        System.out.println("Wybrano typ karty!");
+                        break;
+                    case "12":
+                        pracownik.DodajDoZamowienia();
+                        System.out.println("Dodano do zamowienia!");
+                        break;
+
+                    default:WyborUzytkownika();
+                }
+            } else if (WyborUzytkownika().equals("U")) {
+            }
+
+
                 default:
                     System.out.println("Zły wybór!");
                     break;

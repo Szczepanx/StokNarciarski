@@ -4,6 +4,7 @@ import java.util.List;
 public class KartaPkt extends Karta{
     private int IloscPkt;
 
+
     List<KartaPkt> karty = new LinkedList<>();
 
 
@@ -23,6 +24,7 @@ public class KartaPkt extends Karta{
 
     }
 
+
     public KartaPkt() {
     }
 
@@ -41,9 +43,11 @@ public class KartaPkt extends Karta{
         return this;
     }
 
+ list
     public double cenaZaKarte(int iloscPunktow){
         double cena = iloscPunktow*2.15;
         return cena;
+
     }
 
     @Override
