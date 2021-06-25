@@ -33,72 +33,14 @@ public class Cart {
         List<Cart> koszyk = new ArrayList<>();
         KartaPkt karta = new KartaPkt();
         Sprzet sprzet = new Sprzet();
-
-
-
-//            switch (a) {
-//                case "1":
-//                    System.out.println("Wpisz ilosc biletow;");
-//                    int iloscKart = scanner.nextInt();
-//                    System.out.println("Wpisz ilosc punktow :");
-//                    int iloscPunktow = scanner.nextInt();
-//                    koszyk.add(new Cart("Karta", iloscKart, karta.cenaZaKarte(iloscPunktow) * iloscKart));
-//                    System.out.println(koszyk.toString());
-//                    System.out.println("Karta dodana do koszyka!");
-////
-//
-//                case "2":
-//                    System.out.println("Wpisz czas w godzinach ;");
-//                    int iloscGodzin = scanner.nextInt();
-//                    System.out.println("Wybierz poziom zaawansowania :");
-//                    System.out.println("'1' = zaawansowany");
-//                    System.out.println("'2' = podstawowy");
-//                    String poziomZaawansowania = scanner.next();
-//                    if (poziomZaawansowania.equals("1")) {
-//                        koszyk.add(new Cart("Instruktor", iloscGodzin, 100 * iloscGodzin));
-//                        System.out.println(koszyk.toString());
-//                        System.out.println("Instruktor Dodany!");
-////
-//                    }
-//                    if (poziomZaawansowania.equals("2")) {
-//                        koszyk.add(new Cart("Instruktor", iloscGodzin, 150 * iloscGodzin));
-//                        System.out.println(koszyk.toString());
-//                        System.out.println("Instruktor Dodany!");
-////
-//                    }
-//                case "3":
-//                    sprzet.naszaLista();
-//                    System.out.println("Dostepne Sprzety:");
-//                    sprzet.wyswietlSprzet();
-//                    System.out.println("Wybierz sprzet za pomoca ID: ");
-//                    int idSprzetu = scanner.nextInt();
-//                    for (Sprzet sprzet1 : sprzet.getListaSprzetow()) {
-//                        if (sprzet1.getId() == idSprzetu) {
-//                            koszyk.add(new Cart("Sprzet", 1, sprzet1.getCenaSprzetu()));
-////
-//                        }
-//                    }
-//                case "4":
-//                    System.out.println("Twoj Koszyk Zawiera :");
-//                    System.out.println(koszyk.toString());
-//                    System.out.println("Cena za wszysko :");
-//                    double sum = 0;
-//                    for (Cart cart : koszyk) {
-//                        sum += cart.getPrice();
-//
-//                    }
-//                    System.out.println(sum);
-////
-//            }
         }
 
-
-
-
-
-
-
-
+    public Cart(int id, String description, int ilosc, double price) {
+        this.id = id;
+        this.description = description;
+        this.ilosc = ilosc;
+        this.price = price;
+    }
 
     public Cart(String description, int ilosc, double price) {
         this.description = description;
@@ -147,7 +89,8 @@ public class Cart {
 
     @Override
     public String toString() {
-        return "Koszyk[" +
+        return "Koszyk["+
+                " ID: "+ id+
                 " Opis: " + description +
                 " Ilość: " + ilosc +
                 " Cena: " + price +

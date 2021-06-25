@@ -2,7 +2,11 @@ public class Karta {
     protected int IDKarty;
 
     public Karta() {
+
     }
+
+
+
 
     public Karta(int IDKarty) {
         this.IDKarty = IDKarty;

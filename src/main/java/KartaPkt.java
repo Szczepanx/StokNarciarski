@@ -1,10 +1,34 @@
+import java.util.LinkedList;
+import java.util.List;
+
 public class KartaPkt extends Karta{
     private int IloscPkt;
+
+    List<KartaPkt> karty = new LinkedList<>();
+
+
+
+    public void dodajKarte(KartaPkt kartaPkt){
+        this.karty.add(kartaPkt);
+    }
+
+    public void wyswietKarty(){
+        for (KartaPkt kartaPkt: karty) {
+            System.out.println(karty.toString());
+        }
+
+    }
+
+    public void calaListaKart(){
+
+    }
 
     public KartaPkt() {
     }
 
-    public KartaPkt(int iloscPkt) {
+
+    public KartaPkt(int IDKarty, int iloscPkt) {
+        super(IDKarty);
         IloscPkt = iloscPkt;
     }
 

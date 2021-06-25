@@ -92,11 +92,11 @@ public class Main {
         listaSprzetow.add(new Sprzet(9, "Rossignol", 14.99, "Kijki", true));
 
 
-
+boolean inputFlag = true;
 
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
+        while (inputFlag == true) {
             switch (WyborUzytkownika()){
                 case "K":
                     KierownikMenu();
@@ -164,13 +164,15 @@ public class Main {
                     break;
 
                 case "C":
+                    System.out.println("Wpisz ID Klienta :");
+                    int idKlienta = scanner.nextInt();
                     switch (cart.klientMenu()) {
                         case "1":
                             System.out.println("Wpisz ilosc biletow;");
                             int iloscKart = scanner.nextInt();
-                            System.out.println("Wpisz ilosc punktow :");
+                            System.out.println("Wpisz ilosc punktow na kazdej karcie:");
                             int iloscPunktow = scanner.nextInt();
-                            koszyk.add(new Cart("Karta", iloscKart, karta.cenaZaKarte(iloscPunktow) * iloscKart));
+                            koszyk.add(new Cart(idKlienta,"Karta", iloscKart, karta.cenaZaKarte(iloscPunktow) * iloscKart));
                             System.out.println(koszyk.toString());
                             System.out.println("Karta dodana do koszyka!");
                             break;
@@ -182,16 +184,14 @@ public class Main {
                             System.out.println("'2' = podstawowy");
                             String poziomZaawansowania = scanner.next();
                             if (poziomZaawansowania.equals("1")) {
-                                koszyk.add(new Cart("Instruktor", iloscGodzin, 100 * iloscGodzin));
+                                koszyk.add(new Cart(idKlienta,"Instruktor", iloscGodzin, 100 * iloscGodzin));
                                 System.out.println(koszyk.toString());
                                 System.out.println("Instruktor Dodany!");
-//
                             }
                             if (poziomZaawansowania.equals("2")) {
-                                koszyk.add(new Cart("Instruktor", iloscGodzin, 150 * iloscGodzin));
+                                koszyk.add(new Cart(idKlienta,"Instruktor", iloscGodzin, 150 * iloscGodzin));
                                 System.out.println(koszyk.toString());
                                 System.out.println("Instruktor Dodany!");
-//
                             }
                             break;
                         case "3":
@@ -202,27 +202,27 @@ public class Main {
                             int idSprzetu = scanner.nextInt();
                             for (Sprzet sprzet1 : sprzet.getListaSprzetow()) {
                                 if (sprzet1.getId() == idSprzetu) {
-                                    koszyk.add(new Cart("Sprzet", 1, sprzet1.getCenaSprzetu()));
-//
+                                    koszyk.add(new Cart(idKlienta,"Sprzet", 1, sprzet1.getCenaSprzetu()));
+                                    sprzet1.setDostepnoscSprzetu(false);
                                 }
                             }
                             break;
                         case "4":
+
                             System.out.println("Twoj Koszyk Zawiera :");
                             System.out.println(koszyk.toString());
                             System.out.println("Cena za wszysko :");
                             double sum = 0;
                             for (Cart cart1 : koszyk) {
+                                if (cart1.getId() == idKlienta)
                                 sum += cart1.getPrice();
                             }
                             System.out.println(sum);
                             break;
                     }
-
+                    break;
                 case "E":
-                    System.exit(0);
-
-
+                    System.exit(1);
                 default:
                     System.out.println("Zły wybór!");
                     break;

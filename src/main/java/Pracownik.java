@@ -11,6 +11,8 @@ public class Pracownik {
 
     Sprzet sprzet = new Sprzet();
 
+    KartaPkt kartaPkt = new KartaPkt();
+
 
 
     public void calaListaPracownikow(){
@@ -41,6 +43,7 @@ public class Pracownik {
         System.out.println("Podaj Nazwisko Klienta :");
         String nazwiskoKlienta = scanner.next();
         listaKlientow.add(new Klient(idKlienta,idKarty,imieKlienta,nazwiskoKlienta));
+        kartaPkt.dodajKarte(new KartaPkt(idKarty,0));
         return listaKlientow;
     }
 
