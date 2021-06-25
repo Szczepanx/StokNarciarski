@@ -111,20 +111,7 @@ public class Kierownik extends Pracownik{
         return listaPracownikow;
 
     }
-    public double UstalCeneZaNaliczanyCzas(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wpisz cene :");
-        double cenaZaCzas = scanner.nextDouble();
-        return cenaZaCzas;
-
-    }
-    public double UstalCeneZaNaliczonePunkty(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wpisz cene :");
-        double cenaZaPunkty = scanner.nextDouble();
-        return cenaZaPunkty;
-    }
-
+   
     public List<Kierownik> getListaKierownikow() {
         return listaKierownikow;
     }
