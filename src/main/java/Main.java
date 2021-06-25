@@ -34,17 +34,15 @@ public class Main {
 
     public static void PracownikMenu(){
         System.out.println("DodajNowegoKlienta:1");
-        System.out.println("PrzypiszKarteDoKlienta:2");
-        System.out.println("PrzeprowadzPlatnosc:3");
-        System.out.println("SprawdzDostepneSprzety:4");
-        System.out.println("WypozyczSprzet:5");
-        System.out.println("PrzyjmijZwrotSprzetu:6");
-        System.out.println("ZarezerwujLekcjeUInstruktora:7");
-        System.out.println("UsunWpisZTerminarza:8");
-        System.out.println("ZobaczZarezerwowaneLekcje:9");
-        System.out.println("PodliczKoszty:10");
-        System.out.println("WybierzTypKarty:11");
-        System.out.println("DodajDoZamowienia:12");
+        
+        System.out.println("PrzeprowadzPlatnosc:2");
+        System.out.println("SprawdzDostepneSprzety:3");
+        System.out.println("WypozyczSprzet:4");
+        System.out.println("PrzyjmijZwrotSprzetu:5");
+        
+        System.out.println("UsunWpisZTerminarza:6");
+        System.out.println("ZobaczZarezerwowaneLekcje:7");
+        
     }
 
     public static void main(String[] args) {
