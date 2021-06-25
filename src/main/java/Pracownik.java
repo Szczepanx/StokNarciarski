@@ -11,6 +11,10 @@ public class Pracownik {
 
     Sprzet sprzet = new Sprzet();
 
+
+    KartaPkt kartaPkt = new KartaPkt();
+
+
     public void DodajNowegoKlienta(List<Klient> listaKlientow){
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj ID Klienta:");
@@ -22,7 +26,7 @@ public class Pracownik {
         System.out.println("Podaj nazwisko klienta:");
             String nazwiskoKlienta = scan.next();
         scan.close();
- main
+
 
         listaKlientow.add(new Klient(IntIDKlienta, IntIDKarty,imieKlienta,nazwiskoKlienta));
     }
@@ -42,6 +46,7 @@ public class Pracownik {
 
                 listaKart.add(new KartaCzas());
 
+
             }
 
             for (Klient Klient : listaKlientow){
@@ -54,7 +59,23 @@ public class Pracownik {
             }
 
 
+
+    public List<Klient> DodajNowegoKlienta(List <Klient> listaKlientow){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj Id Klienta:");
+        int idKlienta = scanner.nextInt();
+        System.out.println("Podaj ID karty :");
+        int idKarty = scanner.nextInt();
+        System.out.println("Podaj Imie Klienta :");
+        String imieKlienta = scanner.next();
+        System.out.println("Podaj Nazwisko Klienta :");
+        String nazwiskoKlienta = scanner.next();
+        listaKlientow.add(new Klient(idKlienta,idKarty,imieKlienta,nazwiskoKlienta));
+        kartaPkt.dodajKarte(new KartaPkt(idKarty,0));
+        return listaKlientow;
+
         scan.close();
+
     }
 
     public void PrzeprowadzPlatnosc(){
