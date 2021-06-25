@@ -2,20 +2,12 @@
 ***
 ##### Temat projektu: Ośrodek narciarski
 ---
-##### Informacje podstawowe:
-Projekt systemu obsługi stoku narciarskiego pisany w Javie. Pisany jako projekt z przedmiotu Inżynieria Oprogramowania. Projekt pozwala na zarządzanie pracownikami, klientami, wypożyczanie sprzętu oraz wynajmowanie instruktora.
-
----
-##### Wykonane testy jednostkowe: 
-Jakieś
-
----
-##### Wykonane testy TDD:
-Jakieś
+##### Informacje:
+Projekt systemu obsługi stoku narciarskiego pisany w Javie. Pisany jako projekt z przedmiotu Inżynieria Oprogramowania. Program po uruchomieniu pozwala na wybranie konta którego chcemy użyć. Następnie pokazuje się lista akcji dostępnych dla danego poziomu uprawnień. 
 
 ---
 ##### Implementacja:
-Jakaś
+Projekt został napisany całkowicie w Javie, Działa na listach wiązanych które przechowywują obiekty klas. W projekcie używane były wbudowane biblioteki javy.  Mimo, że projekt z założenia nie jest przesadnie skomplikowany, przyspożył nam kilka problemów podczas implementacji
 
 ---
 ##### Środowisko IDE:
