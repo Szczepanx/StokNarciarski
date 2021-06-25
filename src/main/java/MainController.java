@@ -4,6 +4,10 @@ public class MainController {
 
     private static Kierownik kierownik;
     private static Sprzet sprzet;
+
+    private static Klient klient;
+    private static Zamownienie zamownienie;
+
     static Pracownik pracownik = new Pracownik();
     static List<Kierownik> listaKierowników = new ArrayList<Kierownik>();      //Kierownik
     static List<Pracownik> listaPracownikow = new ArrayList<Pracownik>();      //Pracownik
@@ -16,6 +20,7 @@ public class MainController {
 
 
     static Klient klient = new Klient();
+
 
     public static void clearScreen() {
         System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n");
@@ -121,14 +126,14 @@ list
     }
 
     public static void main(String[] args) {
-list
+
 
         List<Kierownik> listaKierowników = new ArrayList<Kierownik>();      //Kierownik
         List<Pracownik> listaPracownikow = new ArrayList<Pracownik>();      //Pracownik
         List<Instruktor> listaInstruktorow = new ArrayList<Instruktor>();   //Instruktor
         List<Klient> listaKlientow = new ArrayList<Klient>();               //Klient
         List<Sprzet> listaSprzetow = new ArrayList<Sprzet>();               //Sprzet
-main
+
         listaPracownikow.add(new Pracownik(1, "Jan", "Kowalski"));
         listaPracownikow.add(new Pracownik(2, "Andrzej", "Nowak"));
         listaPracownikow.add(new Pracownik(3, "Tadeusz", "Kaleta"));
@@ -144,6 +149,12 @@ main
         listaSprzetow.add(new Sprzet(7, "Rossignol", 45.00, "Narty", true));
         listaSprzetow.add(new Sprzet(8, "Rossignol", 24.99, "Buty Narciarskie", true));
         listaSprzetow.add(new Sprzet(9, "Rossignol", 14.99, "Kijki", true));
+
+
+
+        zamownienie.podliczTotalKoszt(1);
+       
+
         Start();
     }
 }
