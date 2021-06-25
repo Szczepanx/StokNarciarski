@@ -44,9 +44,6 @@ public class Pracownik {
         return listaKlientow;
     }
 
-    public void PrzypiszKarteDoKlienta(){
-
-    }
     public void PrzeprowadzPlatnosc(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Czy klient zaplacil?('T' lub 'N'");
@@ -91,9 +88,6 @@ public class Pracownik {
     }
     public void ZobaczZarezerwowaneLekcje(){
 
-    }
-    public void PodliczKoszty(){
-//to jest w koszyku
     }
 
     public Pracownik(int idPracownika, String imiePracownika, String nazwiskoPracownika) {
