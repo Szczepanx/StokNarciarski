@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,41 +7,54 @@ public class Pracownik {
     private int IdPracownika;
     private String ImiePracownika;
     private String NazwiskoPracownika;
-    private List<Pracownik> listaPracownikow = new LinkedList<>();
+
 
     Sprzet sprzet = new Sprzet();
 
+    public void DodajNowegoKlienta(List<Klient> listaKlientow){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj ID Klienta:");
+            int IntIDKlienta = scan.nextInt();
+        System.out.println("Podaj ID Karty:");
+            int IntIDKarty = scan.nextInt();
+        System.out.println("Podaj imie klienta:");
+            String imieKlienta = scan.next();
+        System.out.println("Podaj nazwisko klienta:");
+            String nazwiskoKlienta = scan.next();
+        scan.close();
+ main
 
-
-    public void calaListaPracownikow(){
-        listaPracownikow.add(new Pracownik(1, "Jan", "Kowalski"));
-        listaPracownikow.add(new Pracownik(2, "Andrzej", "Nowak"));
-        listaPracownikow.add(new Pracownik(3, "Tadeusz", "Kaleta"));
-        listaPracownikow.add(new Pracownik(4, "Stefan", "Drab"));}
-
-    public void dodajPracownika(Pracownik pracownik){
-        this.listaPracownikow.add(pracownik);
+        listaKlientow.add(new Klient(IntIDKlienta, IntIDKarty,imieKlienta,nazwiskoKlienta));
     }
 
-    public void wyswietlPracownikow(){
-        for (Pracownik pracownik : listaPracownikow) {
-            System.out.println(pracownik.toString());
-        }
+    public void PrzypiszKarteDoKlienta(List<Karta> listaKart, List<Klient> listaKlientow){
+        LocalTime now = LocalTime.now();
+        Scanner scan = new Scanner(System.in);
 
-    }
+            System.out.println("Wybierz typ Karty");
+            System.out.println("Karta Czasowa:1");
+            System.out.println("Karta Punktowa:2");
+            int wyborKarty = scan.nextInt();
+            if (wyborKarty == 1){
+                System.out.println("Podaj ilość minut");
+                int iloscMinut = scan.nextInt();
+                int numerKarty = listaKart.size() -1;
 
-    public List<Klient> DodajNowegoKlienta(List <Klient> listaKlientow){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj Id Klienta:");
-        int idKlienta = scanner.nextInt();
-        System.out.println("Podaj ID karty :");
-        int idKarty = scanner.nextInt();
-        System.out.println("Podaj Imie Klienta :");
-        String imieKlienta = scanner.next();
-        System.out.println("Podaj Nazwisko Klienta :");
-        String nazwiskoKlienta = scanner.next();
-        listaKlientow.add(new Klient(idKlienta,idKarty,imieKlienta,nazwiskoKlienta));
-        return listaKlientow;
+                listaKart.add(new KartaCzas());
+
+            }
+
+            for (Klient Klient : listaKlientow){
+                String imieKlienta = Klient.getImieKlienta();
+                String nazwiskoKlienta = Klient.getNazwiskoKlienta();
+                int IDKarty = Klient.getIDKarty();
+                int IDKlienta = Klient.getIDKlienta();
+                System.out.println("imie: " + imieKlienta+" nazwisko: "+nazwiskoKlienta+" IDKarty: "+IDKarty+" IDKlienta: "+IDKlienta+"%n");
+
+            }
+
+
+        scan.close();
     }
 
     public void PrzeprowadzPlatnosc(){
@@ -53,9 +66,11 @@ public class Pracownik {
         }
         System.out.println("Platnosc `zatwierdzona");
     }
+
     public void SprawdzDostepneSprzety(List<Sprzet> listaSprzetow){
-        System.out.println(listaSprzetow.toString());
+
     }
+
     public void WypozyczSprzet(){
         Scanner scanner = new Scanner(System.in);
 
@@ -90,6 +105,12 @@ public class Pracownik {
 
     }
 
+    public void DodajDoZamowienia(){
+
+ 
+    }
+
+
     public Pracownik(int idPracownika, String imiePracownika, String nazwiskoPracownika) {
         IdPracownika = idPracownika;
         ImiePracownika = imiePracownika;
@@ -123,15 +144,6 @@ public class Pracownik {
 
     public Pracownik setNazwiskoPracownika(String nazwiskoPracownika) {
         NazwiskoPracownika = nazwiskoPracownika;
-        return this;
-    }
-
-    public List<Pracownik> getListaPracownikow() {
-        return listaPracownikow;
-    }
-
-    public Pracownik setListaPracownikow(List<Pracownik> listaPracownikow) {
-        this.listaPracownikow = listaPracownikow;
         return this;
     }
 
