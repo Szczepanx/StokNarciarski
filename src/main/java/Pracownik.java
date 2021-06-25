@@ -104,17 +104,12 @@ public class Pracownik {
     public void ZobaczZarezerwowaneLekcje(){
 
     }
-    public void PodliczKoszty(){
- list
-//to jest w koszyku
-
-
-    }
 
     public void DodajDoZamowienia(){
 
- main
+ 
     }
+
 
     public Pracownik(int idPracownika, String imiePracownika, String nazwiskoPracownika) {
         IdPracownika = idPracownika;

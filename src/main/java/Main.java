@@ -1,3 +1,4 @@
+import java.lang.invoke.SwitchPoint;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -12,7 +13,6 @@ public class Main {
 
         for (Sprzet sprzet : listaSprzetow) {
             if (sprzet.getProducent().equals(producent)) {
-                System.out.println(sprzet);
                 return sprzet;
             }
         }
@@ -20,7 +20,7 @@ public class Main {
     }
     public static String WyborUzytkownika(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("'U'=uzytkownik , 'K'= kierownik , 'P'=pracownik");
+        System.out.println( "'C' = koszyk, 'K'= kierownik , 'P'=pracownik, 'E'= wyjscie");
         String wybierzUzytkownika= scanner.nextLine();
         return wybierzUzytkownika;
     }
@@ -51,15 +51,17 @@ public class Main {
 
         LocalDateTime localDateTime = LocalDateTime.now();
 
-        System.out.println(localDateTime.plus(30, ChronoUnit.MINUTES));
-        System.out.println(localDateTime);
-
         LocalDate localDate = LocalDate.now();
 
 
         Kierownik kierownik = new Kierownik();
         Pracownik pracownik = new Pracownik();
+        Cart cart = new Cart();
+
+        KartaPkt karta = new KartaPkt();
+        Sprzet sprzet = new Sprzet();
         List<Instruktor> listaInstruktorow = new LinkedList<>();
+        List<Cart> koszyk = new ArrayList<>();
 
         List<Pracownik> listaPracownikow = new LinkedList<>();
         listaPracownikow.add(new Pracownik(1, "Jan", "Kowalski"));
@@ -89,38 +91,138 @@ public class Main {
         listaSprzetow.add(new Sprzet(8, "Rossignol", 24.99, "Buty Narciarskie", true));
         listaSprzetow.add(new Sprzet(9, "Rossignol", 14.99, "Kijki", true));
 
-        System.out.println(findUsingEnhancedForLoop("Rossignol" ,listaSprzetow));
 
 
 
         Scanner scanner = new Scanner(System.in);
 
-        while (!scanner.hasNext("dupa")) {
-
-            if (WyborUzytkownika().equals("K")) {
-                KierownikMenu();
-                while (!scanner.hasNext("exit")) {
-                    String wybirzOpcje = scanner.next();
-                    if (wybirzOpcje.equals("1")) {
-                        kierownik.DodajNowySprzet(listaSprzetow);
-                        System.out.println("Sprzet dodany!");
-                    } else if (wybirzOpcje.equals("2")) {
-                        kierownik.UsunSprzet(listaSprzetow);
-                        System.out.println("Sprzet usuniety!");
-                    } else if (wybirzOpcje.equals("3")) {
-                        kierownik.DodajPracownika(listaPracownikow);
-                        System.out.println("Pracownik dodany!");
-                    } else if (wybirzOpcje.equals("4")) {
-                        kierownik.UsunPracownika(listaPracownikow);
-                        System.out.println("Pracownik usuniety");
-                    } else if (wybirzOpcje.equals("5")) {
-                        kierownik.DodajNowegoInstruktora(listaInstruktorow);
-                        System.out.println("Instruktor dodany!");
-                    } else if (wybirzOpcje.equals("6")) {
-                        kierownik.UsunInstruktora(listaInstruktorow);
-                        System.out.println("Instruktor usuniety" +
-                                "!");
+        while (true) {
+            switch (WyborUzytkownika()){
+                case "K":
+                    KierownikMenu();
+                    String choise = scanner.next();
+                    switch (choise){
+                        case "1":
+                            kierownik.DodajNowySprzet(listaSprzetow);
+                            System.out.println("Sprzet dodany!");
+                            break;
+                        case "2":
+                            kierownik.UsunSprzet(listaSprzetow);
+                            System.out.println("Sprzet usuniety!");
+                            break;
+                        case "3":
+                            kierownik.DodajPracownika(listaPracownikow);
+                            System.out.println("Pracownik dodany!");
+                            break;
+                        case "4":
+                            kierownik.UsunPracownika(listaPracownikow);
+                            System.out.println("Pracownik usuniety");
+                            break;
+                        case "5":
+                            kierownik.DodajNowegoInstruktora(listaInstruktorow);
+                            System.out.println("Instruktor dodany!");
+                            break;
+                        case "6":
+                            kierownik.UsunInstruktora(listaInstruktorow);
+                            System.out.println("Instruktor usuniety!");
+                            break;
                     }
+
+                    break;
+                case "P":
+                    PracownikMenu();
+                    String choise1 =scanner.next();
+
+                    switch (choise1) {
+                        case "1":
+                            pracownik.DodajNowegoKlienta(listaKlientow);
+                            System.out.println("Dodano Nowego Klienta!");
+                            break;
+                        case "2":
+                            pracownik.PrzeprowadzPlatnosc();
+                            System.out.println("Przeprowadzono Platnosc:");
+                            break;
+                        case "3":
+                            pracownik.SprawdzDostepneSprzety(listaSprzetow);
+                            System.out.println("Oto Sprzety!");
+                        case "4":
+                            pracownik.WypozyczSprzet();
+                            System.out.println("Wypozyczono  Sprzet");
+                            break;
+                        case "5":
+                            pracownik.PrzyjmijZwrotSprzetu();
+                            System.out.println("Przyjmijeto Zwrot sprzetu!");
+                            break;
+                        case "6":
+                            pracownik.UsunWpisZTerminarza();
+                            System.out.println("Usunieto wpis z terminarza:");
+                            break;
+                        case "7":
+                            pracownik.ZobaczZarezerwowaneLekcje();
+                            System.out.println("Zarezerwowane lekcje!");
+                            break;
+                    }
+                    break;
+
+                case "C":
+                    switch (cart.klientMenu()) {
+                        case "1":
+                            System.out.println("Wpisz ilosc biletow;");
+                            int iloscKart = scanner.nextInt();
+                            System.out.println("Wpisz ilosc punktow :");
+                            int iloscPunktow = scanner.nextInt();
+                            koszyk.add(new Cart("Karta", iloscKart, karta.cenaZaKarte(iloscPunktow) * iloscKart));
+                            System.out.println(koszyk.toString());
+                            System.out.println("Karta dodana do koszyka!");
+                            break;
+                        case "2":
+                            System.out.println("Wpisz czas w godzinach ;");
+                            int iloscGodzin = scanner.nextInt();
+                            System.out.println("Wybierz poziom zaawansowania :");
+                            System.out.println("'1' = zaawansowany");
+                            System.out.println("'2' = podstawowy");
+                            String poziomZaawansowania = scanner.next();
+                            if (poziomZaawansowania.equals("1")) {
+                                koszyk.add(new Cart("Instruktor", iloscGodzin, 100 * iloscGodzin));
+                                System.out.println(koszyk.toString());
+                                System.out.println("Instruktor Dodany!");
+//
+                            }
+                            if (poziomZaawansowania.equals("2")) {
+                                koszyk.add(new Cart("Instruktor", iloscGodzin, 150 * iloscGodzin));
+                                System.out.println(koszyk.toString());
+                                System.out.println("Instruktor Dodany!");
+//
+                            }
+                            break;
+                        case "3":
+                            sprzet.naszaLista();
+                            System.out.println("Dostepne Sprzety:");
+                            sprzet.wyswietlSprzet();
+                            System.out.println("Wybierz sprzet za pomoca ID: ");
+                            int idSprzetu = scanner.nextInt();
+                            for (Sprzet sprzet1 : sprzet.getListaSprzetow()) {
+                                if (sprzet1.getId() == idSprzetu) {
+                                    koszyk.add(new Cart("Sprzet", 1, sprzet1.getCenaSprzetu()));
+//
+                                }
+                            }
+                            break;
+                        case "4":
+                            System.out.println("Twoj Koszyk Zawiera :");
+                            System.out.println(koszyk.toString());
+                            System.out.println("Cena za wszysko :");
+                            double sum = 0;
+                            for (Cart cart1 : koszyk) {
+                                sum += cart1.getPrice();
+                            }
+                            System.out.println(sum);
+                            break;
+                    }
+
+                case "E":
+                    System.exit(0);
+
                 }
 
 
@@ -179,6 +281,10 @@ public class Main {
             } else if (WyborUzytkownika().equals("U")) {
             }
 
+                default:
+                    System.out.println("Zły wybór!");
+                    break;
+            }
         }
     }
 }
